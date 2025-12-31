@@ -33,10 +33,10 @@ export default function ECVisual() {
                                 <meshStandardMaterial color={p.color} metalness={0.6} roughness={0.2} />
                             </RoundedBox>
                             <Text position={[0, -1.3, 0]} fontSize={0.3} color="white">
-                                ITEM #{i + 1}
+                                商品 #{i + 1}
                             </Text>
                             <Text position={[0, -1.6, 0]} fontSize={0.25} color="#88ddff">
-                                $999.00
+                                ¥9,999
                             </Text>
                         </Float>
                     </group>
@@ -44,7 +44,7 @@ export default function ECVisual() {
             </group>
 
             <Text position={[0, 2.5, 0]} fontSize={0.8} color="white" font="https://fonts.gstatic.com/s/raleway/v14/1Ptrg8zYS_SKggPNwK4vaqI.woff">
-                COMMERCE
+                Eコマース
             </Text>
         </group>
     )

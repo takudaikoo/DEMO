@@ -10,9 +10,9 @@ interface OverlayProps {
 
 export default function Overlay({ mode, setMode }: OverlayProps) {
     const scenes = [
-        { id: 0, label: 'HOMEPAGE', icon: Monitor, sub: 'WEB INTERFACE' },
-        { id: 1, label: 'EC SITE', icon: ShoppingCart, sub: 'COMMERCE LOGIC' },
-        { id: 2, label: 'DATABASE', icon: Database, sub: 'SYSTEM INTEGRATION' },
+        { id: 0, label: 'ホームページ', icon: Monitor, sub: 'WEBインターフェース' },
+        { id: 1, label: 'ECサイト', icon: ShoppingCart, sub: 'コマースロジック' },
+        { id: 2, label: 'データベース', icon: Database, sub: 'システム統合' },
     ]
 
     return (
@@ -21,10 +21,10 @@ export default function Overlay({ mode, setMode }: OverlayProps) {
             <header className={styles.header}>
                 <div>
                     <h1 className={styles.titleMain}>NEX-SEPIA</h1>
-                    <p className={styles.titleSub}>FLOW DEMONSTRATION</p>
+                    <p className={styles.titleSub}>フロー・デモンストレーション</p>
                 </div>
                 <div className={styles.versionTag}>
-                    VER. 1.0.0 // DEMO BUILD
+                    Ver. 1.0.0 // デモビルド
                 </div>
             </header>
 
@@ -63,9 +63,9 @@ export default function Overlay({ mode, setMode }: OverlayProps) {
                 </div>
 
                 <div className={styles.status}>
-                    <p>RENDER_ENGINE: THREE.JS</p>
-                    <p>SYSTEM_STATUS: ONLINE</p>
-                    <p>FPS: 60 (CAP)</p>
+                    <p>描画エンジン: THREE.JS</p>
+                    <p>システムステータス: オンライン</p>
+                    <p>FPS: 60 (制限)</p>
                 </div>
             </footer>
         </div>

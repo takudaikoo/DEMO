@@ -51,10 +51,10 @@ export default function DBVisual() {
         <group>
             <Particles count={2000} />
             <Text position={[0, 0, 0]} fontSize={1.5} color="#00ff88" anchorX="center" anchorY="middle">
-                DATABASE
+                データベース
             </Text>
             <Text position={[0, -1.5, 0]} fontSize={0.5} color="#ffffff" anchorX="center" anchorY="middle">
-                SYSTEM INTEGRATION
+                システム統合
             </Text>
         </group>
     )

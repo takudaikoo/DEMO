@@ -19,10 +19,10 @@ export default function HPVisual() {
         {/* Main Interface Board */}
         <mesh position={[0, 0, 0]}>
           <boxGeometry args={[6, 4, 0.2]} />
-          <meshPhysicalMaterial 
-            color="#001aff" 
-            transmission={0.9} 
-            opacity={0.5} 
+          <meshPhysicalMaterial
+            color="#001aff"
+            transmission={0.9}
+            opacity={0.5}
             metalness={0.8}
             roughness={0.2}
             ior={1.5}
@@ -30,14 +30,14 @@ export default function HPVisual() {
             transparent
           />
         </mesh>
-        
+
         <Text
           position={[-2.5, 1.5, 0.15]}
           fontSize={0.3}
           color="white"
           anchorX="left"
         >
-          DEMO HOMEPAGE
+          デモ ホームページ
         </Text>
 
         {/* Abstract UI Elements */}
@@ -51,7 +51,7 @@ export default function HPVisual() {
         {/* Connecting Lines */}
         <Grid position={[0, -2, 0]} args={[10, 10]} cellColor="white" sectionColor="#001aff" fadeDistance={10} />
       </Float>
-      
+
       {/* Background Particles */}
       <points>
         <sphereGeometry args={[10, 64, 64]} />
