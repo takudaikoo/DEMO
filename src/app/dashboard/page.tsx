@@ -88,16 +88,16 @@ function AnalyticsView() {
     return (
         <div className="h-full flex flex-col p-8">
             <div className="flex justify-between items-center mb-8">
-                <h2 className="text-2xl font-bold text-white tracking-widest">REAL-TIME TRENDS</h2>
+                <h2 className="text-2xl font-bold text-white tracking-widest">リアルタイム・トレンド</h2>
                 <div className="flex gap-4">
                     <div className="flex items-center gap-2 text-xs text-gray-400">
-                        <div className="w-2 h-2 rounded-full bg-emerald-500"></div> GROWTH
+                        <div className="w-2 h-2 rounded-full bg-emerald-500"></div> 成長率
                     </div>
                     <div className="flex items-center gap-2 text-xs text-gray-400">
-                        <div className="w-2 h-2 rounded-full bg-blue-500"></div> TRAFFIC
+                        <div className="w-2 h-2 rounded-full bg-blue-500"></div> トラフィック
                     </div>
                     <div className="flex items-center gap-2 text-xs text-gray-400">
-                        <div className="w-2 h-2 rounded-full bg-amber-500"></div> REQUESTS
+                        <div className="w-2 h-2 rounded-full bg-amber-500"></div> リクエスト
                     </div>
                 </div>
             </div>
@@ -156,18 +156,18 @@ export default function DashboardPage() {
     const [view, setView] = useState<'overview' | 'analytics'>('overview')
 
     const users = [
-        { id: "USR-001", name: "ALEXANDER SMITH", role: "ADMIN", status: "ACTIVE", lastLogin: "10 min ago" },
-        { id: "USR-002", name: "SARAH CONNOR", role: "EDITOR", status: "OFFLINE", lastLogin: "2 hours ago" },
-        { id: "USR-003", name: "JOHN DOE", role: "VIEWER", status: "ACTIVE", lastLogin: "Just now" },
-        { id: "USR-004", name: "KATE WINSLET", role: "VIEWER", status: "WARNING", lastLogin: "3 days ago" },
-        { id: "USR-005", name: "MICHAEL BAY", role: "EDITOR", status: "ACTIVE", lastLogin: "1 hour ago" },
+        { id: "USR-001", name: "鈴木 一郎", role: "管理者", status: "有効", lastLogin: "10分前" },
+        { id: "USR-002", name: "佐藤 花子", role: "編集者", status: "オフライン", lastLogin: "2時間前" },
+        { id: "USR-003", name: "田中 健太", role: "閲覧者", status: "有効", lastLogin: "たった今" },
+        { id: "USR-004", name: "高橋 優子", role: "閲覧者", status: "注意", lastLogin: "3日前" },
+        { id: "USR-005", name: "伊藤 大輔", role: "編集者", status: "有効", lastLogin: "1時間前" },
     ]
 
     const stats = [
-        { label: "TOTAL USERS", start: 2964, end: 8942, speed: 0.8, color: "text-white", change: "+201%" },
-        { label: "ACTIVE SESSIONS", start: 198, end: 421, speed: 1.5, color: "text-green-400", change: "+112%" },
-        { label: "DATA USAGE", start: 0.9, end: 1.2, unit: "TB", speed: 3.0, color: "text-blue-400", change: "+33%" },
-        { label: "SECURITY ALERTS", start: 5, end: 0, speed: 0, color: "text-gray-400", change: "-100%", isFlash: true }
+        { label: "総ユーザー数", start: 2964, end: 8942, speed: 0.8, color: "text-white", change: "+201%" },
+        { label: "アクティブセッション", start: 198, end: 421, speed: 1.5, color: "text-green-400", change: "+112%" },
+        { label: "データ使用量", start: 0.9, end: 1.2, unit: "TB", speed: 3.0, color: "text-blue-400", change: "+33%" },
+        { label: "セキュリティアラート", start: 5, end: 0, speed: 0, color: "text-gray-400", change: "-100%", isFlash: true }
     ]
 
     return (
@@ -185,18 +185,18 @@ export default function DashboardPage() {
                         className={`flex items-center gap-3 px-4 py-3 rounded transition-colors w-full ${view === 'overview' ? 'bg-white/5 text-white border border-white/10' : 'hover:bg-white/5'}`}
                     >
                         <Users size={18} />
-                        <span className="text-sm">CUSTOMERS</span>
+                        <span className="text-sm">顧客管理</span>
                     </button>
                     <button
                         onClick={() => setView('analytics')}
                         className={`flex items-center gap-3 px-4 py-3 rounded transition-colors w-full ${view === 'analytics' ? 'bg-white/5 text-white border border-white/10' : 'hover:bg-white/5'}`}
                     >
                         <Activity size={18} />
-                        <span className="text-sm">ANALYTICS</span>
+                        <span className="text-sm">アナリティクス</span>
                     </button>
                     <a href="#" className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded transition-colors">
                         <BarChart2 size={18} />
-                        <span className="text-sm">REPORTS</span>
+                        <span className="text-sm">レポート</span>
                     </a>
                 </nav>
 
@@ -204,8 +204,8 @@ export default function DashboardPage() {
                     <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-green-500 to-emerald-700"></div>
                         <div className="text-xs">
-                            <div className="text-white">ADMINISTRATOR</div>
-                            <div className="text-green-500">Connected</div>
+                            <div className="text-white">管理者</div>
+                            <div className="text-green-500">接続中</div>
                         </div>
                     </div>
                 </div>
@@ -222,14 +222,14 @@ export default function DashboardPage() {
                 <header className="h-16 border-b border-gray-800 flex items-center justify-between px-8 bg-[#0a0a0a]/80 backdrop-blur-sm z-10">
                     <h1 className="font-bold text-white tracking-widest flex items-center gap-2">
                         {view === 'analytics' && <ArrowLeft className="cursor-pointer hover:text-green-500" onClick={() => setView('overview')} size={18} />}
-                        CUSTOMER DATABASE // {view === 'overview' ? 'V.2.4' : 'ANALYTICS'}
+                        顧客データベース // {view === 'overview' ? 'V.2.4' : 'アナリティクス'}
                     </h1>
                     <div className="flex items-center gap-4">
                         <div className="relative">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600" size={16} />
                             <input
                                 type="text"
-                                placeholder="SEARCH_QUERY..."
+                                placeholder="検索クエリ..."
                                 className="bg-black border border-gray-800 rounded-full pl-10 pr-4 py-1.5 text-xs focus:border-green-500 outline-none w-64 transition-colors"
                             />
                         </div>
@@ -271,22 +271,22 @@ export default function DashboardPage() {
                                 {/* Main Table */}
                                 <div className="bg-[#0f0f0f] border border-gray-800 rounded-lg overflow-hidden">
                                     <div className="px-6 py-4 border-b border-gray-800 flex justify-between items-center bg-[#0d0d0d]">
-                                        <h2 className="text-sm font-bold text-white tracking-widest">RECENT ENTRIES</h2>
+                                        <h2 className="text-sm font-bold text-white tracking-widest">最近のエントリー</h2>
                                         <button
                                             onClick={() => setView('analytics')}
                                             className="text-xs text-green-500 border border-green-900 bg-green-900/10 px-3 py-1 rounded hover:bg-green-900/20 transition-colors"
                                         >
-                                            EXPORT CSV
+                                            CSVエクスポート
                                         </button>
                                     </div>
                                     <table className="w-full text-left text-xs">
                                         <thead>
                                             <tr className="border-b border-gray-800 text-gray-500 uppercase tracking-wider">
                                                 <th className="px-6 py-3 font-medium">ID</th>
-                                                <th className="px-6 py-3 font-medium">USER IDENTITY</th>
-                                                <th className="px-6 py-3 font-medium">ROLE</th>
-                                                <th className="px-6 py-3 font-medium">STATUS</th>
-                                                <th className="px-6 py-3 font-medium">LAST ACTIVITY</th>
+                                                <th className="px-6 py-3 font-medium">ユーザー名</th>
+                                                <th className="px-6 py-3 font-medium">役割</th>
+                                                <th className="px-6 py-3 font-medium">ステータス</th>
+                                                <th className="px-6 py-3 font-medium">最終アクティビティ</th>
                                                 <th className="px-6 py-3 font-medium"></th>
                                             </tr>
                                         </thead>
@@ -306,8 +306,8 @@ export default function DashboardPage() {
                                                     </td>
                                                     <td className="px-6 py-4">
                                                         <div className="flex items-center gap-2">
-                                                            <div className={`w-1.5 h-1.5 rounded-full ${u.status === 'ACTIVE' ? 'bg-green-500 animate-pulse' : u.status === 'WARNING' ? 'bg-orange-500' : 'bg-gray-500'}`}></div>
-                                                            <span className={u.status === 'ACTIVE' ? 'text-green-500' : u.status === 'WARNING' ? 'text-orange-500' : 'text-gray-500'}>{u.status}</span>
+                                                            <div className={`w-1.5 h-1.5 rounded-full ${u.status === '有効' ? 'bg-green-500 animate-pulse' : u.status === '注意' ? 'bg-orange-500' : 'bg-gray-500'}`}></div>
+                                                            <span className={u.status === '有効' ? 'text-green-500' : u.status === '注意' ? 'text-orange-500' : 'text-gray-500'}>{u.status}</span>
                                                         </div>
                                                     </td>
                                                     <td className="px-6 py-4 text-gray-500">{u.lastLogin}</td>

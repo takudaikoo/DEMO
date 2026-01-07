@@ -47,11 +47,11 @@ export default function CorporatePage() {
             <div className="relative z-10 h-full overflow-y-auto no-scrollbar scroll-smooth">
                 {/* Header */}
                 <header className="fixed top-0 left-0 w-full p-6 flex justify-between items-center bg-black/50 backdrop-blur-md z-50 border-b border-white/5">
-                    <h1 className="text-2xl font-bold tracking-widest uppercase">DEMO Ltd.</h1>
+                    <h1 className="text-2xl font-bold tracking-widest uppercase">株式会社デモ</h1>
                     <nav className="flex gap-8 text-sm tracking-widest opacity-70">
-                        <a href="#about" className="hover:text-white transition-colors">COMPANY</a>
-                        <a href="#careers" className="hover:text-white transition-colors">CAREERS</a>
-                        <a href="#contact" className="hover:text-white transition-colors">CONTACT</a>
+                        <a href="#about" className="hover:text-white transition-colors">会社概要</a>
+                        <a href="#careers" className="hover:text-white transition-colors">採用情報</a>
+                        <a href="#contact" className="hover:text-white transition-colors">お問い合わせ</a>
                     </nav>
                 </header>
 
@@ -63,19 +63,19 @@ export default function CorporatePage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
                         >
-                            <p className="text-sm tracking-[0.5em] text-gray-400 mb-4">INNOVATION FOR FUTURE</p>
+                            <p className="text-sm tracking-[0.5em] text-gray-400 mb-4">未来へのイノベーション</p>
                             <h2 className="text-8xl font-black leading-tight mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
                                 REDEFINING<br />
                                 POSSIBILITIES
                             </h2>
                             <p className="max-w-xl text-gray-400 leading-relaxed text-lg">
-                                At DEMO Ltd., we construct the digital backbone of tomorrow.
-                                From seamless integration to overwhelming visual experiences,
-                                we are the architects of the new web standard.
+                                私たち株式会社デモは、明日のデジタルバックボーンを構築します。<br />
+                                シームレスな統合から圧倒的な映像体験まで、<br />
+                                私たちは新しいWebのスタンダードを設計するアーキテクトです。
                             </p>
 
                             <button className="mt-12 px-8 py-3 border border-white text-sm tracking-widest hover:bg-white hover:text-black transition-colors duration-300">
-                                VIEW OUR VISION
+                                ビジョンを見る
                             </button>
                         </motion.div>
                     </section>
@@ -83,20 +83,20 @@ export default function CorporatePage() {
                     {/* About Section */}
                     <section id="about" className="min-h-[60vh] flex items-center gap-12 border-t border-gray-800 pt-20 mb-32">
                         <div className="w-1/2">
-                            <h3 className="text-4xl font-bold mb-6">GLOBAL SCALE</h3>
+                            <h3 className="text-4xl font-bold mb-6">グローバルスケール</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">
-                                With 25 offices worldwide, our network is as expansive as our vision.
-                                We deploy solutions that scale instantly, security at the core,
-                                and design at the forefront.
+                                世界25拠点に広がるネットワークは、私たちのビジョンの広がりそのものです。<br />
+                                セキュリティを核に、デザインを最前線に置き、<br />
+                                瞬時に拡張するソリューションを展開しています。
                             </p>
                             <div className="grid grid-cols-2 gap-8 mt-12">
                                 <div>
                                     <div className="text-4xl font-bold text-blue-500 mb-2">25+</div>
-                                    <div className="text-xs tracking-widest text-gray-500">GLOBAL LOCATIONS</div>
+                                    <div className="text-xs tracking-widest text-gray-500">グローバル拠点</div>
                                 </div>
                                 <div>
                                     <div className="text-4xl font-bold text-blue-500 mb-2">500M</div>
-                                    <div className="text-xs tracking-widest text-gray-500">DAILY REQUESTS</div>
+                                    <div className="text-xs tracking-widest text-gray-500">1日のリクエスト数</div>
                                 </div>
                             </div>
                         </div>
@@ -128,29 +128,29 @@ export default function CorporatePage() {
                                 />
                                 <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
                                     <div className="text-xl font-bold tracking-widest">LEONIDAS KING</div>
-                                    <div className="text-xs text-gray-400 tracking-[0.2em]">REPRESENTATIVE DIRECTOR</div>
+                                    <div className="text-xs text-gray-400 tracking-[0.2em]">代表取締役</div>
                                 </div>
                             </div>
 
                             {/* CEO Bio */}
                             <div className="w-2/3 pt-8">
-                                <p className="text-xs tracking-[0.3em] text-blue-500 mb-6">MESSAGE FROM THE CEO</p>
+                                <p className="text-xs tracking-[0.3em] text-blue-500 mb-6">代表メッセージ</p>
                                 <h3 className="text-5xl font-bold leading-tight mb-12">
-                                    "THE JUNGLE LAW<br />APPLIES TO DIGITAL."
+                                    "デジタルにも<br />ジャングルの掟を。"
                                 </h3>
 
                                 <div className="space-y-8 text-gray-400 leading-relaxed font-light border-l border-gray-800 pl-8">
                                     <div>
-                                        <div className="text-white font-bold mb-2 tracking-widest text-sm">2015 - FOUNDATION</div>
-                                        <p>Founded DEMO Ltd. with a vision to revolutionize the digital landscape. Established the core philosophy of "Predatory Innovation".</p>
+                                        <div className="text-white font-bold mb-2 tracking-widest text-sm">2015 - 設立</div>
+                                        <p>株式会社デモを設立。「捕食的イノベーション」を理念に掲げ、デジタルランドスケープの変革に着手。</p>
                                     </div>
                                     <div>
-                                        <div className="text-white font-bold mb-2 tracking-widest text-sm">2018 - GLOBAL EXPANSION</div>
-                                        <p>Led the acquisition of 3 major tech firms, expanding the territory into the Asian and European markets. Awarded "Top Apex Predator" in Tech.</p>
+                                        <div className="text-white font-bold mb-2 tracking-widest text-sm">2018 - グローバル展開</div>
+                                        <p>主要テック企業3社の買収を主導し、アジア・欧州市場へ進出。Tech分野で「Top Apex Predator」賞を受賞。</p>
                                     </div>
                                     <div>
-                                        <div className="text-white font-bold mb-2 tracking-widest text-sm">2023 - AI INTEGRATION</div>
-                                        <p>Pioneered the integration of Generative AI into all core services, ensuring the pack stays ahead of the curve. This marked a new era of dominance.</p>
+                                        <div className="text-white font-bold mb-2 tracking-widest text-sm">2023 - AI インテグレーション</div>
+                                        <p>全サービスへの生成AI統合を先駆けて完了。群れをリードする存在としての地位を確立しました。</p>
                                     </div>
                                 </div>
                             </div>
@@ -164,34 +164,34 @@ export default function CorporatePage() {
                             <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-600/20 blur-[100px] pointer-events-none group-hover:bg-blue-600/30 transition-colors"></div>
 
                             <div className="text-center mb-12">
-                                <h3 className="text-3xl font-bold mb-4">CONTACT US</h3>
-                                <p className="text-gray-500 text-sm">We are ready to listen to your proposal.</p>
+                                <h3 className="text-3xl font-bold mb-4">お問い合わせ</h3>
+                                <p className="text-gray-500 text-sm">新たなプロジェクトのご提案をお待ちしております。</p>
                             </div>
 
                             <form className="space-y-6">
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-xs tracking-widest text-gray-500">FIRST NAME</label>
-                                        <input type="text" className="w-full bg-[#111] border border-gray-800 p-4 text-sm focus:border-white outline-none transition-colors rounded" placeholder="JOHN" />
+                                        <label className="text-xs tracking-widest text-gray-500">名</label>
+                                        <input type="text" className="w-full bg-[#111] border border-gray-800 p-4 text-sm focus:border-white outline-none transition-colors rounded" placeholder="太郎" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-xs tracking-widest text-gray-500">LAST NAME</label>
-                                        <input type="text" className="w-full bg-[#111] border border-gray-800 p-4 text-sm focus:border-white outline-none transition-colors rounded" placeholder="DOE" />
+                                        <label className="text-xs tracking-widest text-gray-500">姓</label>
+                                        <input type="text" className="w-full bg-[#111] border border-gray-800 p-4 text-sm focus:border-white outline-none transition-colors rounded" placeholder="山田" />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs tracking-widest text-gray-500">EMAIL ADDRESS</label>
-                                    <input type="email" className="w-full bg-[#111] border border-gray-800 p-4 text-sm focus:border-white outline-none transition-colors rounded" placeholder="john@example.com" />
+                                    <label className="text-xs tracking-widest text-gray-500">メールアドレス</label>
+                                    <input type="email" className="w-full bg-[#111] border border-gray-800 p-4 text-sm focus:border-white outline-none transition-colors rounded" placeholder="taro@example.com" />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs tracking-widest text-gray-500">MESSAGE</label>
-                                    <textarea rows={6} className="w-full bg-[#111] border border-gray-800 p-4 text-sm focus:border-white outline-none transition-colors rounded resize-none" placeholder="Tell us about your project..."></textarea>
+                                    <label className="text-xs tracking-widest text-gray-500">メッセージ</label>
+                                    <textarea rows={6} className="w-full bg-[#111] border border-gray-800 p-4 text-sm focus:border-white outline-none transition-colors rounded resize-none" placeholder="プロジェクトの詳細をお聞かせください..."></textarea>
                                 </div>
 
                                 <button type="button" className="w-full bg-white text-black font-bold tracking-widest py-4 hover:bg-gray-200 transition-colors uppercase text-sm mt-4">
-                                    Send Message
+                                    送信する
                                 </button>
                             </form>
                         </div>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ShoppingCart, Star, Heart, ArrowRight } from 'lucide-react'
 import { useRef, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ServicePage() {
     const [cartCount, setCartCount] = useState(2)
@@ -92,21 +93,24 @@ export default function ServicePage() {
             <nav className="fixed top-8 left-0 w-full bg-white/90 backdrop-blur-md z-[60] px-8 py-6 border-b border-gray-100 flex items-center justify-between transition-all">
                 <div className="text-xl font-bold tracking-tighter">DEMO SERVICE</div>
                 <div className="hidden md:flex gap-8 text-sm font-medium text-gray-500">
-                    <a href="#" className="text-black">New Arrivals</a>
-                    <a href="#" className="hover:text-black transition-colors">Apparel</a>
-                    <a href="#" className="hover:text-black transition-colors">Accessories</a>
-                    <a href="#" className="hover:text-black transition-colors">Tech</a>
+                    <a href="#" className="text-black">新着アイテム</a>
+                    <a href="#" className="hover:text-black transition-colors">アパレル</a>
+                    <a href="#" className="hover:text-black transition-colors">アクセサリー</a>
+                    <a href="#" className="hover:text-black transition-colors">テック</a>
                 </div>
-                <motion.div
-                    className="flex gap-4 relative"
-                    animate={{ scale: cartCount > 2 ? [1, 1.5, 1] : 1 }}
-                    key={cartCount} // Trigger animation on count change
-                >
-                    <ShoppingCart className="w-5 h-5" />
-                    <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-black text-white flex items-center justify-center text-[10px] font-bold">
-                        {cartCount}
-                    </div>
-                </motion.div>
+                {/* Cart Icon -> Link to Checkout */}
+                <Link href="/checkout">
+                    <motion.div
+                        className="flex gap-4 relative cursor-pointer hover:opacity-70 transition-opacity"
+                        animate={{ scale: cartCount > 2 ? [1, 1.5, 1] : 1 }}
+                        key={cartCount} // Trigger animation on count change
+                    >
+                        <ShoppingCart className="w-5 h-5" />
+                        <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-black text-white flex items-center justify-center text-[10px] font-bold">
+                            {cartCount}
+                        </div>
+                    </motion.div>
+                </Link>
             </nav>
 
             {/* Hero */}
@@ -131,7 +135,7 @@ export default function ServicePage() {
                             onClick={handleShopNow}
                             className="bg-black text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform flex items-center gap-2 mx-auto"
                         >
-                            SHOP NOW <ArrowRight size={16} />
+                            ショッピングを始める <ArrowRight size={16} />
                         </button>
                     </motion.div>
                 </div>
@@ -140,59 +144,61 @@ export default function ServicePage() {
             {/* Product Grid */}
             <div ref={gridRef} className="max-w-7xl mx-auto px-8 py-20 bg-white scroll-mt-24">
                 <div className="flex justify-between items-end mb-12">
-                    <h3 className="text-2xl font-bold">LATEST DROPS</h3>
+                    <h3 className="text-2xl font-bold">最新ドロップ</h3>
                     <button
                         onClick={handleViewAll}
                         className="text-sm border-b border-black pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors"
                     >
-                        View All (Demo Animation)
+                        すべて表示 (デモアニメーション)
                     </button>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
                     {products.map((p) => (
-                        <div key={p.id} className="group cursor-pointer">
-                            <div className="relative aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-md border border-gray-100 shadow-sm transition-all hover:shadow-xl">
-                                {p.tag && (
-                                    <span className="absolute top-3 left-3 bg-white px-2 py-1 text-[10px] font-bold tracking-wider z-20 shadow-sm">
-                                        {p.tag}
-                                    </span>
-                                )}
-                                <div className="absolute top-3 right-3 p-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-sm">
-                                    <Heart size={14} />
-                                </div>
+                        <Link href="/product/1" key={p.id}>
+                            <div className="group cursor-pointer">
+                                <div className="relative aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-md border border-gray-100 shadow-sm transition-all hover:shadow-xl">
+                                    {p.tag && (
+                                        <span className="absolute top-3 left-3 bg-white px-2 py-1 text-[10px] font-bold tracking-wider z-20 shadow-sm">
+                                            {p.tag}
+                                        </span>
+                                    )}
+                                    <div className="absolute top-3 right-3 p-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-sm">
+                                        <Heart size={14} />
+                                    </div>
 
-                                {/* Product Image */}
-                                <div className="w-full h-full p-4 group-hover:scale-105 transition-transform duration-500 relative">
-                                    <Image
-                                        src={p.img}
-                                        alt={p.name}
-                                        fill
-                                        className="object-contain p-4 mix-blend-multiply"
-                                    />
+                                    {/* Product Image */}
+                                    <div className="w-full h-full p-4 group-hover:scale-105 transition-transform duration-500 relative">
+                                        <Image
+                                            src={p.img}
+                                            alt={p.name}
+                                            fill
+                                            className="object-contain p-4 mix-blend-multiply"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <h4 className="font-bold text-sm mb-1">{p.name}</h4>
+                                        <p className="text-xs text-gray-500">Premium Series</p>
+                                    </div>
+                                    <p className="font-medium text-sm">{p.price}</p>
                                 </div>
                             </div>
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <h4 className="font-bold text-sm mb-1">{p.name}</h4>
-                                    <p className="text-xs text-gray-500">Premium Series</p>
-                                </div>
-                                <p className="font-medium text-sm">{p.price}</p>
-                            </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
 
             {/* Banner */}
             <div className="bg-black text-white py-24 px-8 text-center sticky bottom-0 -z-10">
-                <h3 className="text-4xl font-bold mb-6">JOIN THE MEMBERSHIP</h3>
+                <h3 className="text-4xl font-bold mb-6">メンバーシップに参加</h3>
                 <p className="space-y-4 max-w-md mx-auto text-gray-400 mb-8">
-                    Get exclusive access to new drops, special events, and member-only sales.
+                    限定ドロップ、スペシャルイベント、メンバー限定セールへのアクセス権を取得しましょう。
                 </p>
                 <div className="flex max-w-sm mx-auto border-b border-white pb-2">
-                    <input type="email" placeholder="ENTER ADDRESS" className="bg-transparent flex-1 outline-none text-white placeholder-gray-500" />
-                    <button className="text-sm font-bold">SUBSCRIBE</button>
+                    <input type="email" placeholder="メールアドレスを入力" className="bg-transparent flex-1 outline-none text-white placeholder-gray-500" />
+                    <button className="text-sm font-bold">登録する</button>
                 </div>
             </div>
         </div>
