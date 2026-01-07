@@ -69,11 +69,9 @@ export default function ECVisual() {
                             <Text position={[0, -1.6, 0]} fontSize={0.25} color="#88ddff">
                                 ¥9,999
                             </Text>
-                            {p.isTarget && (
-                                <Text position={[0, 1.2, 0]} fontSize={0.2} color="#ff0088">
-                                    クリックで購入
-                                </Text>
-                            )}
+                            <Text position={[0, 1.2, 0]} fontSize={0.2} color="#ff0088">
+                                クリックして購入
+                            </Text>
                         </Float>
                     </group>
                 ))}

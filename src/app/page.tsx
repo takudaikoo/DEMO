@@ -7,22 +7,22 @@ export default function Home() {
   const demos = [
     {
       path: '/corporate',
-      title: 'CORPORATE SITE',
-      desc: 'High-end branding, 3D Typography, Smooth Scroll',
+      title: 'コーポレートサイト',
+      desc: 'ハイエンドブランディング、3Dタイポグラフィ、スムーススクロール',
       icon: Monitor,
       color: 'from-blue-600 to-indigo-900'
     },
     {
       path: '/service',
-      title: 'EC / SERVICE',
-      desc: 'Product Grid, Modern Retail Interface, Clean Design',
+      title: 'EC / サービスデモ',
+      desc: 'プロダクトグリッド、モダンなリテールUI、洗練されたデザイン',
       icon: ShoppingCart,
       color: 'from-emerald-500 to-teal-900'
     },
     {
       path: '/dashboard',
-      title: 'CUSTOMER DB',
-      desc: 'Data Dense, Admin Panel, Real-time Status',
+      title: '顧客管理データベース',
+      desc: '高密度データ表示、管理パネル、リアルタイムステータス',
       icon: Database,
       color: 'from-orange-600 to-red-900'
     },
@@ -37,7 +37,7 @@ export default function Home() {
       >
         <h1 className="text-6xl font-black mb-4 tracking-tighter">DEMO SUITE</h1>
         <p className="text-gray-400 max-w-lg mx-auto">
-          Select a demonstration module below. These environments are simulated to represent production-grade video assets.
+          以下のデモモジュールを選択してください。これらの環境は本番グレードの映像資産をシミュレートしています。
         </p>
       </motion.div>
 
@@ -54,7 +54,7 @@ export default function Home() {
                 {d.desc}
               </p>
               <div className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase group-hover:gap-4 transition-all">
-                Launch Demo <ArrowRight size={14} />
+                デモを起動 <ArrowRight size={14} />
               </div>
             </div>
           </Link>

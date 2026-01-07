@@ -46,7 +46,7 @@ export default function CheckoutPage() {
             if (url) {
                 window.location.href = url
             } else {
-                throw new Error('No checkout URL returned')
+                throw new Error('決済用URLが取得できませんでした')
             }
         } catch (err: any) {
             console.error('Checkout Error:', err)
@@ -139,7 +139,7 @@ export default function CheckoutPage() {
                         ${loading ? 'bg-neutral-600 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-500 shadow-indigo-500/20'}
                     `}
                         >
-                            {loading ? '処理中...' : '決済へ進む (Stripe)'}
+                            {loading ? '処理中...' : '決済へ進む'}
                         </button>
                     </form>
                 </div>
