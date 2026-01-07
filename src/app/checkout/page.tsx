@@ -2,9 +2,7 @@
 
 import React, { useState } from 'react'
 import { useCart } from '../context/CartContext'
-import { loadStripe } from '@stripe/stripe-js'
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 export default function CheckoutPage() {
     const { items, totalAmount } = useCart()
@@ -39,18 +37,16 @@ export default function CheckoutPage() {
                 }),
             })
 
-            const { sessionId, error } = await response.json()
+            const { sessionId, url, error } = await response.json()
 
             if (error) {
                 throw new Error(error)
             }
 
-            const stripe = await stripePromise
-            if (stripe) {
-                const { error: stripeError } = await stripe.redirectToCheckout({ sessionId })
-                if (stripeError) {
-                    throw new Error(stripeError.message)
-                }
+            if (url) {
+                window.location.href = url
+            } else {
+                throw new Error('No checkout URL returned')
             }
         } catch (err: any) {
             console.error('Checkout Error:', err)
