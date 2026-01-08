@@ -35,7 +35,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
       >
-        <h1 className="text-6xl font-black mb-4 tracking-tighter">DEMO SUITE</h1>
+        <h1 className="text-6xl font-black mb-4 tracking-tighter">デモページ</h1>
         <p className="text-gray-400 max-w-lg mx-auto">
           以下のデモモジュールを選択してください。これらの環境は本番グレードの映像資産をシミュレートしています。
         </p>
